@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TMDev - TamperMonkey Dev Tester</title>
+  <link rel="stylesheet" href="/__tmdev__/styles.css">
+</head>
+<body>
+
+  <header id="app-header">
+    <div class="header-brand">
+      <span class="brand-icon">&lt;/&gt;</span>
+      <h1 class="brand-title">TMDev</h1>
+      <span class="brand-subtitle">TamperMonkey Dev Tester</span>
+    </div>
+    <div class="header-status">
+      <span id="connection-indicator" class="status-dot disconnected" title="Disconnected"></span>
+      <span id="connection-label" class="status-label">Disconnected</span>
+    </div>
+  </header>
+
+  <main id="app-main">
+    <section id="url-bar">
+      <label for="url-input" class="url-label">Proxy URL</label>
+      <div class="url-input-group">
+        <span class="url-prefix">http://</span>
+        <input
+          type="text"
+          id="url-input"
+          class="url-input"
+          placeholder="example.com/page"
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <button id="url-go" class="btn btn-accent" type="button">Go</button>
+      </div>
+    </section>
+
+    <section id="scripts-panel">
+      <div class="panel-header">
+        <h2 class="panel-title">Scripts</h2>
+        <span id="script-count" class="badge">0</span>
+      </div>
+      <div id="scripts-list" class="scripts-list">
+        <!-- Script cards rendered by JS -->
+      </div>
+    </section>
+
+    <section id="detail-panel">
+      <nav id="tab-bar" class="tab-bar" role="tablist">
+        <button class="tab-btn active" data-tab="console" role="tab" aria-selected="true">Console</button>
+        <button class="tab-btn" data-tab="storage" role="tab" aria-selected="false">Storage</button>
+        <button class="tab-btn" data-tab="info" role="tab" aria-selected="false">Info</button>
+      </nav>
+      <div id="tab-content" class="tab-content">
+        <!-- Tab content rendered by JS -->
+      </div>
+    </section>
+  </main>
+
+  <footer id="app-footer">
+    <div class="footer-left">
+      <span class="status-dot" id="footer-status-dot"></span>
+      <span id="footer-status-text">Initializing...</span>
+    </div>
+    <div class="footer-right">
+      <span id="footer-script-stats">0 scripts</span>
+      <span class="footer-sep">|</span>
+      <span id="footer-enabled-stats">0 enabled</span>
+    </div>
+  </footer>
+
+  <script type="module" src="/__tmdev__/app.js"></script>
+</body>
+</html>

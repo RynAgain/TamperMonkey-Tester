@@ -1,0 +1,42 @@
+{
+  "name": "tampermonkey-dev-tester",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Local dev service for testing TamperMonkey userscripts",
+  "bin": {
+    "tmdev": "./dist/cli/index.js"
+  },
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "tsc -p tsconfig.build.json",
+    "start": "node dist/cli/index.js",
+    "test": "vitest",
+    "lint": "eslint src/**/*.ts"
+  },
+  "engines": {
+    "node": ">= 18"
+  },
+  "dependencies": {
+    "@fastify/static": "^8.1.0",
+    "@fastify/websocket": "^11.0.2",
+    "chokidar": "^4.0.3",
+    "commander": "^13.1.0",
+    "dom-serializer": "^2.0.0",
+    "domhandler": "^5.0.3",
+    "domutils": "^3.2.2",
+    "fastify": "^5.3.2",
+    "htmlparser2": "^10.0.0",
+    "minimatch": "^10.0.1",
+    "picocolors": "^1.1.1",
+    "undici": "^7.8.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@typescript-eslint/eslint-plugin": "^8.29.0",
+    "@typescript-eslint/parser": "^8.29.0",
+    "esbuild": "^0.25.2",
+    "eslint": "^8.57.0",
+    "typescript": "^5.8.2",
+    "vitest": "^3.1.1"
+  }
+}
